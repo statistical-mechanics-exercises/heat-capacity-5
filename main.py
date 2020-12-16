@@ -16,7 +16,9 @@ error_energies2 = data[:,4]
 cv_temperatures, cv = np.zeros(10), np.zeros(10)
 
 # Your code to calculate the values of the heat capacity and the errors goes here
-
+for i in range(10) :
+   cv_temperatures[i] = temperatures[i] 
+   cv[i] = ( energies2[i] - energies[i]*energies[i] ) / ( temperatures[i]*temperatures[i] )
 
 # This will plot a graph of the heat capacity as a function of temperature
 plt.plot( cv_temperatures, cv, 'ko' )
